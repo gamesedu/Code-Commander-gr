@@ -30,7 +30,7 @@ Class.subclass('App', {
     
     // Load our resources
     Crafty.load([
-      '/images/sprites.png'
+      './images/sprites.png'
     ], function() {
       app.setup();
     });
@@ -74,8 +74,8 @@ Class.subclass('App', {
   },
   
   setupSprites: function() {
-    Crafty.sprite(64, '/images/sprites.png', App.SPRITES);
-    Crafty.sprite(90, '/images/explosion-sprites.png', {explosion: [0,0]});
+    Crafty.sprite(64, './images/sprites.png', App.SPRITES);
+    Crafty.sprite(90, './images/explosion-sprites.png', {explosion: [0,0]});
   },
 
   setupControls: function() {
