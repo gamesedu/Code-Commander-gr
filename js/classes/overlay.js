@@ -84,11 +84,11 @@ Overlay.PAGES = {
     p.h1('Welcome ' + app.settings.get('name') + '!')
       .p('Σε αυτό το παιχνίδι ελέγχετε ένα τανκ και πρέπει να καταστρέψετε την βάση του αντιπάλου.')
       .p('To do this, you must write a program to move and shoot your way through each level.')
-      .p('You may use the following commands, one per line:')
+      .p('Οι εντολές που μπορείτε να χρησιμοποιήσετε είναι οι παρακάτω (μια εντολή ανα σειρά):')
       .indent('<b>ΜΠΡΟΣΤΑ,ΑΡΙΣΤΕΡΑ,ΔΕΞΙΑ,ΠΥΡ,ΣΤΟΠ/ΠΕΡΙΜΕΝΕ</b>')
       .p('Once you have written your program, click the "Run Program" button to see if it works!')
       .p('There are lots of levels.  You can select any level to play with the "Select Level" button below or under the program window on the right.')
-      .button('Select Level', "app.overlay.displayPage('select-level');");
+      .button('Επιλογή επιπέδου', "app.overlay.displayPage('select-level');");
   },
   
   'select-level': function(p) {
