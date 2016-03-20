@@ -3,9 +3,11 @@
 Code Commander Greek
 -T: tree , R:rock , 
 < > ^ tank heading&starting point
-O : tower
+tower : O.O O..O O...O and vertical 
 dot (.) empty space
-walls : - | +
+walls : - | + 
+mine: *
+Target: B
 
 */
 //include "map_create.php";
