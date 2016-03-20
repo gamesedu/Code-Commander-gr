@@ -17,108 +17,108 @@ Target: B
 * - 
 * - 
 */
-$combo=;
+$combo='
 <form>
 <select id="myList" >
   <option value="." >.</option>
-  <option value='>' > > </option>
-  <option value='<' > < </option>  
+  <option value=">" > > </option>
+  <option value="<" > < </option>  
   <option value="^" >^</option>
   <option value="R">R</option>
   <option value="T">T</option>
   <option value="." >.</option>
-  <option value='O' >O</option>
-  <option value='|' >|< </option>  
+  <option value="O" >O</option>
+  <option value="|" >|< </option>  
   <option value="-" >-</option>
   <option value="+">+</option>
   <option value="*">*</option>
   <option value="B">B</option>
   
-</select>
-<form>
+</select>';
+
 
 echo 
 "<form>
-<table >
+<table border=1>
   <tr>
-    <th ></th>
-    <th ></th>
-    <th ></th>
-    <th ></th>
-    <th ></th>
-    <th ></th>
-    <th ></th>
-    <th ></th>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
   <tr>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    <td ></td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
+    <td >".$combo."</td>
   </tr>
 </table>
 </form>
@@ -148,7 +148,7 @@ App.LEVELS = {
 
     {
       key: 'intro-1',
-      name: 'Turn, Then Fire!',
+      name: 'Turn, tden Fire!',
       map: [
         '......T.',
         'T.......',
