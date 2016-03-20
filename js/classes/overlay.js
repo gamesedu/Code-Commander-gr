@@ -82,10 +82,10 @@ Overlay.PAGES = {
   
   'welcome': function(p) {
     p.h1('Welcome ' + app.settings.get('name') + '!')
-      .p('In this game, you command a robot tank that must destroy the enemy base.')
+      .p('Σε αυτό το παιχνίδι ελέγχετε ένα τανκ και πρέπει να καταστρέψετε την βάση του αντιπάλου.')
       .p('To do this, you must write a program to move and shoot your way through each level.')
       .p('You may use the following commands, one per line:')
-      .indent('<b>move, left, right, fire, wait</b>')
+      .indent('<b>ΜΠΡΟΣΤΑ,ΑΡΙΣΤΕΡΑ,ΔΕΞΙΑ,ΠΥΡ,ΣΤΟΠ/ΠΕΡΙΜΕΝΕ</b>')
       .p('Once you have written your program, click the "Run Program" button to see if it works!')
       .p('There are lots of levels.  You can select any level to play with the "Select Level" button below or under the program window on the right.')
       .button('Select Level', "app.overlay.displayPage('select-level');");
@@ -135,12 +135,12 @@ Overlay.PAGES = {
     p.h1('Programming Help')
       .p('To program your tank, you must enter a series of commands, one per line, in the "Program" box on the right of the screen.')
       .p('You may choose from the following commands:')
-      .indent('<b>move</b>: moves the tank forward one square')
-      .indent('<b>right</b>: turn right 90 degrees')
-      .indent('<b>left</b>: turn left 90 degrees')
-      .indent('<b>wait</b>: wait a turn')
-      .indent('<b>fire</b>: fire your gun - the bullet will travel until it hits something')
-      .p('Commands can be repeated multiple times by adding a count like so: <b>move(3)</b>')
+      .indent('<b>ΜΠΡΟΣΤΑ, ΜΠ ,move</b>: Το τανκ κινείται 1 τετράγωνο μπροστά. moves the tank forward one square')
+      .indent('<b>ΔΕΞΙΑ ,ΔΕ ,right</b>: Δεξιά στροφή 90μοίρες / turn right 90 degrees')
+      .indent('<b>ΑΡΙΣΤΕΡΑ , ΑΡ, left</b>: αριστερή στροφή 90μοίρες / turn left 90 degrees')
+      .indent('<b>ΣΤΟΠ, ΠΕΡΙΜΕΝΕ, wait</b>: Περίμενε ένα γύρο / wait a turn')
+      .indent('<b>ΠΥΡ,ΕΠΙΘΕΣΗ,ΜΠΑΜ, fire</b>: fire your gun - the bullet will travel until it hits something')
+      .p('Μπορείτε επίσης να γράψετε ΜΠΡΟΣΤΑ(5).Commands can be repeated multiple times by adding a count like so: <b>move(3)</b>')
       .button('Close', "app.overlay.hide();");
   },
   
