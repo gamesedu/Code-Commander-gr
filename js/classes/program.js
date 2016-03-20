@@ -4,8 +4,8 @@ Class.subclass('Program', {
   CODES: ['fire', 'left', 'move', 'right', 'wait'],
   
   // Parse a command into the command plus optional amount, ie "cmd(amt)"
-  COMMAND_REGEX: /^\s*([a-z]+)(?:\(([0-9]+)\))?\s*$/
-  
+  //COMMAND_REGEX: /^\s*([a-z]+)(?:\(([0-9]+)\))?\s*$/
+  COMMAND_REGEX: /^\s*([a-zα-ωΑ-Ω]+)(?:\(([0-9]+)\))?\s*$/
 }, {
   
   init: function(level) {
@@ -57,9 +57,57 @@ Class.subclass('Program', {
     }
   },
   
+  //+++++++++++++translate function
+
+  //++++++++++greek uppercase+++++++
+replace_greek: function (str) { 
+    //alert ('replace_greek(str)');
+    //++++++++++greek uppercase+++++++
+    var search  = new Array("Ά", "Έ", "Ή", "Ί", "Ϊ", "ΐ", "Ό", "Ύ", "Ϋ", "ΰ", "Ώ","ά", "έ", "ή", "ί", "ϊ",  "ό", "ύ", "ϋ", "ΰ", "ώ"); 
+    var replace_with = new Array("Α", "Ε", "Η", "Ι", "Ι", "Ι", "Ο", "Υ", "Υ", "Υ", "Ω","Α", "Ε", "Η", "Ι", "Ι",  "Ο", "Υ", "Υ", "Υ", "Ω"); 
+    for (var i=0; i<search.length; i++) { 
+         str = str.replace(search[i], replace_with [i]); 
+    } 
+    return str; 
+} ,  
+//-----------------------
+
+
+  
+  translate_source: function(source) {
+
+
+		
+  		//alert("not tranlasted: "+source);
+		source=this.replace_greek(source);
+		source=source.replace(/ΔΕΞΙΑ/gi,"right");
+		source=source.replace(/ΑΡΙΣΤΕΡΑ/gi, "right");  
+		source=source.replace(/ΜΠΡΟΣΤΑ/gi, "move");
+		source=source.replace(/μπροστα/gi,"move");
+		source=source.replace(/ΠΕΡΙΜΕΝΕ/gi, "wait");
+		
+		source=source.replace(/ΣΤΟΠ/gi, "wait");
+		source=source.replace(/ΕΠΙΘΕΣΗ/gi, "fire");
+		source=source.replace(/ΠΥΡ/gi, "fire");
+
+		source=source.replace(/ΔΕ/gi,"right");
+		source=source.replace(/ΑΡ/gi, "left");
+		source=source.replace(/ΜΠ/gi, "move");		
+	
+
+		//alert("tranlasted: "+source);
+		
+		return source;
+  },
+  //------------------------------
+  
+  
+  //jon : should translate this
   parse: function() {
     var self = this;
     var source = $('#program').val();
+	//alert("not tranlasted: "+source);
+	source=this.translate_source(source);//jon 160320
     var lines = source.split(/\r?\n/);
     $.each(lines, function(i, line) {
       self.parseLine(i, line);
@@ -67,6 +115,7 @@ Class.subclass('Program', {
   },
   
   parseLine: function(lineNum, line) {
+	//line=this.translate_source(line);//jon 160320
     var match = Program.COMMAND_REGEX.exec(line);
     if (match) {
       var code = match[1];
@@ -138,6 +187,7 @@ Class.subclass('Program', {
   },
   
   executeCommand: function(code) {
+  //alert(code);//###############
     var program = this;
     var tank = this.tank;
     var map = this.map;
