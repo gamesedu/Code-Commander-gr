@@ -57,7 +57,7 @@ Class.subclass('Program', {
     }
   },
   
-  //+++++++++++++translate function
+
 
   //++++++++++greek uppercase+++++++
 replace_greek: function (str) { 
@@ -71,13 +71,9 @@ replace_greek: function (str) {
     return str; 
 } ,  
 //-----------------------
-
-
+  //+++++++++++++translate function
   
   translate_source: function(source) {
-
-
-		
   		//alert("not tranlasted: "+source);
 		source=this.replace_greek(source);
 		source=source.replace(/ΔΕΞΙΑ/gi,"right");
@@ -90,6 +86,7 @@ replace_greek: function (str) {
 		source=source.replace(/ΕΠΙΘΕΣΗ/gi, "fire");
 		source=source.replace(/ΠΥΡ/gi, "fire");
 		source=source.replace(/ΜΠΑΜ/gi, "fire");
+		source=source.replace(/ΜΠΟΥΜ/gi, "fire");
 		source=source.replace(/ΔΕ/gi,"right");
 		source=source.replace(/ΑΡ/gi, "left");
 		source=source.replace(/ΜΠ/gi, "move");		
