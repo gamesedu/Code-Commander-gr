@@ -81,7 +81,7 @@ replace_greek: function (str) {
   		//alert("not tranlasted: "+source);
 		source=this.replace_greek(source);
 		source=source.replace(/ΔΕΞΙΑ/gi,"right");
-		source=source.replace(/ΑΡΙΣΤΕΡΑ/gi, "right");  
+		source=source.replace(/ΑΡΙΣΤΕΡΑ/gi, "left");  
 		source=source.replace(/ΜΠΡΟΣΤΑ/gi, "move");
 		source=source.replace(/μπροστα/gi,"move");
 		source=source.replace(/ΠΕΡΙΜΕΝΕ/gi, "wait");
@@ -89,7 +89,7 @@ replace_greek: function (str) {
 		source=source.replace(/ΣΤΟΠ/gi, "wait");
 		source=source.replace(/ΕΠΙΘΕΣΗ/gi, "fire");
 		source=source.replace(/ΠΥΡ/gi, "fire");
-
+		source=source.replace(/ΜΠΑΜ/gi, "fire");
 		source=source.replace(/ΔΕ/gi,"right");
 		source=source.replace(/ΑΡ/gi, "left");
 		source=source.replace(/ΜΠ/gi, "move");		
