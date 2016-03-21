@@ -32,8 +32,8 @@ for( $y=1;$y<9;$y++)
 		echo $_POST["combo$x-$y"] ;
 		
 	}
-	
-	if($y<8)echo "',<BR>\n";
+	echo "'";
+	if($y<8)echo ",<BR>\n";
 }
 
 echo " ]
@@ -55,7 +55,7 @@ $combo='
   <option value="T">T</option>
   <option value="." >.</option>
   <option value="O" >O</option>
-  <option value="|" >|< </option>  
+  <option value="|" >|</option>  
   <option value="-">-</option>
   <option value="+">+</option>
   <option value="*">*</option>
