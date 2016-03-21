@@ -17,9 +17,14 @@ Target: B
 * - 
 * - 
 */
+//print_r($_POST);
+if(isSet($_POST)){print_r($_POST);}
+
+function getComboBox( $x, $y){
+
 $combo='
-<form>
-<select id="myList" >
+
+<select id="myList'.$x.'-'.$y.'" name="combo'.$x.'-'.$y.'" >
   <option value="." >.</option>
   <option value=">" > > </option>
   <option value="<" > < </option>  
@@ -36,93 +41,26 @@ $combo='
   
 </select>';
 
+return $combo;
+}
 
-echo 
-"<form>
-<table border=1>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-  <tr>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-    <td >".$combo."</td>
-  </tr>
-</table>
-</form>
-";
+echo " <form method=post ><table border=1>";
+
+for( $y=1;$y<9;$y++)
+{
+	echo "<tr>";
+	for( $x=1;$x<9;$x++){
+		echo "<td >".getComboBox($x,$y)."</td>";
+		
+	}
+	
+	echo "</tr>";
+}
+echo "</table>
+<input type=submit></form>";
+
+
+
 ?>
 <BR>
 <HR size=5>
