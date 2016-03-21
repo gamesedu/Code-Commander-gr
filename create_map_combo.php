@@ -18,7 +18,29 @@ Target: B
 * - 
 */
 //print_r($_POST);
-if(isSet($_POST)){print_r($_POST);}
+//if(isSet($_POST)){print_r($_POST);}
+
+if ($_POST!=null){
+echo "<BR>    {<BR>
+      key: 'newlevel-0'<BR>,
+      name: 'new001!',<BR>";
+echo "map: [";
+for( $y=1;$y<9;$y++)
+{
+	echo "'";
+	for( $x=1;$x<9;$x++){
+		echo $_POST["combo$x-$y"] ;
+		
+	}
+	
+	if($y<8)echo "',<BR>\n";
+}
+
+echo " ]
+ },
+";
+
+}
 
 function getComboBox( $x, $y){
 
@@ -34,7 +56,7 @@ $combo='
   <option value="." >.</option>
   <option value="O" >O</option>
   <option value="|" >|< </option>  
-  <option value="-" >-</option>
+  <option value="-">-</option>
   <option value="+">+</option>
   <option value="*">*</option>
   <option value="B">B</option>
