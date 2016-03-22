@@ -86,7 +86,7 @@ replace_greek: function (str) {
   //+++++++++++++translate function
   
   translate_source: function(source) {
-		var degug1=true;
+		var degug1=false;
   		//alert("not tranlasted: "+source);
 		source=this.replace_greek(source);
 		source=source.replace(/ΔΕΞΙΑ/gi,"right");
@@ -108,7 +108,9 @@ replace_greek: function (str) {
 		source=source.replace(/ΞΑΝΑ/gi, "repeat");	
 		source=source.replace(/ΕΠΑΝΑΛΑΒΕ/gi, "repeat");	
 		source=source.replace(/ΕΠΑΝΕΛΑΒΕ/gi, "repeat");	
-		source=source.replace(/repeat\s*/gi, "repeat");
+		source=source.replace(/REPEAT/gi, "repeat"); //convert to lower case
+		source=source.replace(/repeat\s*/gi, "repeat"); //remove spaces after repeat
+		source=source.replace(/\s*\[/gi, "[");// replace "6  [" with "6["  -remove spaces
 		
 		//search number between repeat 
 		//var repeats=source.match(/repeat.*?\[/); //get the command repeat6 [dothis //we just want the 6
@@ -116,15 +118,11 @@ replace_greek: function (str) {
 		if(degug1)alert ("repeats:"+repeats);//-
 
 		
-		
-		
 		//var text_in_brackets=source.match(/[^[\]]+(?=])/g); //ORIG ok working
 		var text_in_brackets=source.match(/[^[\]]+(?=])/g);
 		if(degug1)alert ("text_in_brackets :"+text_in_brackets);//-
 		
-		
-		//if(degug1)alert ("repeat_command his.repeat_command(text_in_brackets,repeats[0] : "+this.repeat_command(text_in_brackets,repeats[0]));
-		
+
 		var index;
 		for (index = 0; index < repeats.length; ++index) {
 			if(degug1)alert ("repeats[index]:"+repeats[index]);//-
@@ -132,7 +130,7 @@ replace_greek: function (str) {
 			repeats_just_number[index]=repeats[index].replace("repeat", "");
 			//repeats_just_number[index]=repeats[index].replace("[", "");
 			//if(degug1)alert ("repeats:"+repeats);//-
-			if(degug1)alert ("repeats parseInt:"+parseInt(repeats[index]));//-
+			//if(degug1)alert ("repeats parseInt:"+parseInt(repeats_just_number[index]));//-
 			var replace_repeat_with=this.repeat_command(text_in_brackets[index],parseInt(repeats_just_number[index]));
 			if(degug1)alert ("repeat_command repeats_just_number : "+this.repeat_command(text_in_brackets,parseInt(repeats_just_number[index])));
 			source=source.replace(repeats[index], replace_repeat_with); // remove repeat (we are interested only in brackets)
