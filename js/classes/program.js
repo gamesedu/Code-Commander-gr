@@ -57,7 +57,19 @@ Class.subclass('Program', {
     }
   },
   
-
+//++++++++++greek uppercase+++++++
+repeat_command: function (commands,repeats) { 
+    //alert ('repeat command');
+    //++++++++++greek uppercase+++++++
+    var str = '\n'+commands;
+	
+    for (var i=0; i<repeats; i++) { 
+         str += '\n'+commands;
+    } 
+	str += '\n';
+    return str; 
+} ,  
+//-----------------------
 
   //++++++++++greek uppercase+++++++
 replace_greek: function (str) { 
@@ -74,6 +86,7 @@ replace_greek: function (str) {
   //+++++++++++++translate function
   
   translate_source: function(source) {
+		var degug1=false;
   		//alert("not tranlasted: "+source);
 		source=this.replace_greek(source);
 		source=source.replace(/ΔΕΞΙΑ/gi,"right");
@@ -91,9 +104,32 @@ replace_greek: function (str) {
 		source=source.replace(/ΑΡ/gi, "left");
 		source=source.replace(/ΜΠ/gi, "move");		
 	
-
-		//alert("tranlasted: "+source);
+		//try to implement repeat:
+		source=source.replace(/ΞΑΝΑ/gi, "repeat");	
+		source=source.replace(/ΕΠΑΝΑΛΑΒΕ/gi, "repeat");	
+		source=source.replace(/ΕΠΑΝΕΛΑΒΕ/gi, "repeat");	
+		source=source.replace(/repeat\s*/gi, "repeat");
 		
+		//search number between repeat 
+		//var repeats=source.match(/repeat.*?\[/); //get the command repeat6 [dothis //we just want the 6
+		var repeats=source.match(/repeat([0-9]+)\[/)[1]; //ok works get the command repeat6 [dothis //we just want the 6
+		//if(degug1)alert ("repeats:"+repeats);
+		var text_in_brackets=source.match(/[^[\]]+(?=])/g);
+		if(degug1)alert ("text_in_brackets :"+text_in_brackets);
+		var replace_repeat_with=this.repeat_command(text_in_brackets,repeats);
+		if(degug1)alert ("repeat_command : "+this.repeat_command(text_in_brackets,repeats));
+		source=source.replace(/repeat\[/gi, "["); // remove repeat (we are interested only in brackets)
+		
+		//source.match(/\[(.*?)\]/g);
+		//var reg_expre_brackets="/[^[\]]+(?=])/g";
+		//var reg_expre_brackets="/[^[\]]+(?=])/g";
+		
+		//alert (source.match(/[^[\]]+(?=])/g)); //ok gets inside of brackets
+		
+		//if(degug1)alert("tranlasted with brackets: "+source);
+		source=source.replace(/\[/gi, ""); // remove brackets in the end
+		source=source.replace(/\]/gi, ""); // remove brackets in the end
+		if(degug1)alert("tranlasted: "+source);
 		return source;
   },
   //------------------------------
