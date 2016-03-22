@@ -61,12 +61,12 @@ Class.subclass('Program', {
 repeat_command: function (commands,repeats) { 
     //alert ('repeat command');
     //++++++++++greek uppercase+++++++
-    var str = '\n'+commands;
+    var str = '\n';
 	
     for (var i=0; i<repeats; i++) { 
-         str += '\n'+commands;
+         str += commands+'\n';
     } 
-	str += '\n';
+	//str += '\n';
     return str; 
 } ,  
 //-----------------------
@@ -112,13 +112,19 @@ replace_greek: function (str) {
 		
 		//search number between repeat 
 		//var repeats=source.match(/repeat.*?\[/); //get the command repeat6 [dothis //we just want the 6
-		var repeats=source.match(/repeat([0-9]+)\[/)[1]; //ok works get the command repeat6 [dothis //we just want the 6
+		var repeats=source.match(/repeat([0-9]+)\[/); //ok works get the command repeat6 [dothis //we just want the 6
 		//if(degug1)alert ("repeats:"+repeats);
 		var text_in_brackets=source.match(/[^[\]]+(?=])/g);
 		if(degug1)alert ("text_in_brackets :"+text_in_brackets);
-		var replace_repeat_with=this.repeat_command(text_in_brackets,repeats);
-		if(degug1)alert ("repeat_command : "+this.repeat_command(text_in_brackets,repeats));
+		var replace_repeat_with=this.repeat_command(text_in_brackets,repeats[1]);
+		source=source.replace(repeats[0], replace_repeat_with); // remove repeat (we are interested only in brackets)
+		if(degug1)alert ("repeat_command : "+this.repeat_command(text_in_brackets,repeats[1]));
 		source=source.replace(/repeat\[/gi, "["); // remove repeat (we are interested only in brackets)
+		
+		//if(degug1)alert ("repeats:"+repeats[0]);
+		
+		//var re = new RegExp(repeats[0],"gi");
+		
 		
 		//source.match(/\[(.*?)\]/g);
 		//var reg_expre_brackets="/[^[\]]+(?=])/g";
