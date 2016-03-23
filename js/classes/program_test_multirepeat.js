@@ -122,7 +122,8 @@ replace_greek: function (str) {
 		var text_in_brackets=source.match(/[^[\]]+(?=])/g);
 		if(degug1)alert ("text_in_brackets :"+text_in_brackets);//-
 		
-
+		//+++++++++++++++++added if when not using repeat20160323
+		if(repeats!=null){
 		var index;
 		for (index = 0; index < repeats.length; ++index) {
 			if(degug1)alert ("repeats[index]:"+repeats[index]);//-
@@ -135,7 +136,8 @@ replace_greek: function (str) {
 			if(degug1)alert ("repeat_command repeats_just_number : "+this.repeat_command(text_in_brackets,parseInt(repeats_just_number[index])));
 			source=source.replace(repeats[index], replace_repeat_with); // remove repeat (we are interested only in brackets)
 
-		}
+		} // END of for (index = 0; index < repeats.length; ++index) {
+		}// END of if(repeats!=null){		
 		if(degug1)alert ("repeats:"+repeats);//-
 		
 		source=source.replace(/repeat\[/gi, "["); // remove repeat (we are interested only in brackets)
