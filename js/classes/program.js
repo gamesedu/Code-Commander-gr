@@ -116,16 +116,19 @@ replace_greek: function (str) {
 		//if(degug1)alert ("repeats:"+repeats);
 		var text_in_brackets=source.match(/[^[\]]+(?=])/g);
 		if(degug1)alert ("text_in_brackets :"+text_in_brackets);
-		var replace_repeat_with=this.repeat_command(text_in_brackets,repeats[1]);
-		source=source.replace(repeats[0], replace_repeat_with); // remove repeat (we are interested only in brackets)
-		if(degug1)alert ("repeat_command : "+this.repeat_command(text_in_brackets,repeats[1]));
+		//+++++++++++++++++added if when not using repeat20160323
+		if(repeats!=null){
+			var replace_repeat_with=this.repeat_command(text_in_brackets,repeats[1]);
+			source=source.replace(repeats[0], replace_repeat_with); // remove repeat (we are interested only in brackets)
+			if(degug1)alert ("repeat_command : "+this.repeat_command(text_in_brackets,repeats[1]));
+		} //end of if(repeats!=null)
+		//-------------------added if when not using repeat
+		
 		source=source.replace(/repeat\[/gi, "["); // remove repeat (we are interested only in brackets)
 		
 		//if(degug1)alert ("repeats:"+repeats[0]);
 		
 		//var re = new RegExp(repeats[0],"gi");
-		
-		
 		//source.match(/\[(.*?)\]/g);
 		//var reg_expre_brackets="/[^[\]]+(?=])/g";
 		//var reg_expre_brackets="/[^[\]]+(?=])/g";
