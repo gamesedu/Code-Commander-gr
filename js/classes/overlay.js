@@ -83,11 +83,11 @@ Overlay.PAGES = {
   'welcome': function(p) {
     p.h1('Welcome ' + app.settings.get('name') + '!')
       .p('Σε αυτό το παιχνίδι ελέγχετε ένα τανκ και πρέπει να καταστρέψετε την βάση του αντιπάλου.')
-      .p('To do this, you must write a program to move and shoot your way through each level.')
+      .p('Για να το πετύχετε αυτό πρέπει να γράψετε ένα πρόγραμμα που να σας επιτρέψει να κερδίσετε την κάθε αποστολή.') //To do this, you must write a program to move and shoot your way through each level
       .p('Οι εντολές που μπορείτε να χρησιμοποιήσετε είναι οι παρακάτω (μια εντολή ανα σειρά):')
       .indent('<b>ΜΠΡΟΣΤΑ,ΑΡΙΣΤΕΡΑ,ΔΕΞΙΑ,ΠΥΡ,ΣΤΟΠ/ΠΕΡΙΜΕΝΕ</b>')
-      .p('Once you have written your program, click the "Run Program" button to see if it works!')
-      .p('There are lots of levels.  You can select any level to play with the "Select Level" button below or under the program window on the right.')
+      .p('Μόλις γράψετε το πρόγραμμα πατήστε το κουμπί "Εκτέλεση" για να δείτε εαν δουλεύει σωστά.')//Once you have written your program, click the "Run Program" button to see if it works!
+      .p('Υπάρχουν διάφορες αποστολές.Μπορείτε να επιλέξετε όποια αποστολή θέλετε πατώντας το κουμπί "Επιλογή επιπέδου".')
       .button('Επιλογή επιπέδου', "app.overlay.displayPage('select-level');");
   },
   
@@ -112,36 +112,36 @@ Overlay.PAGES = {
     }
     levels += '</table>';
     
-    p.h1('Select a Level')
-      .p('Click on a level number to begin.')
+    p.h1('ΕΠΙΛΕΞΤΕ ΑΠΟΣΤΟΛΗ :')
+      .p('Επιλέξτε αριθμό αποστολής/επιπέδου για να ξεκινήσετε.')
       .html(levels)
-      .p('<i>Higher numbers are harder</i>');
+      .p('<i>Οι πίο μεγάλοι αριθμοί είναι δυσκολότεροι</i>');
   },
   
   'win': function(p) {
-    p.h1('You Win!!!')
-      .p('Congratulations!  See if you can beat the next level!')
-      .button('Next Level', "app.overlay.displayPage('select-level');");
+    p.h1('ΚΕΡΔΙΣΑΤΕ !!!')
+      .p('Συγχαρητήρια! Δοκιμάστε να κερδίσετε και την επόμενη αποστολή !')
+      .button('Επόμενη αποστολή', "app.overlay.displayPage('select-level');");
   },
   
   'lose': function(p) {
-    p.h1('Try Again')
+    p.h1('ΔΟΚΙΜΑΣΤΕ ΞΑΝΑ !')
       .p('You did not destroy the base - keep working on your program and try again!')
-      .button('Retry', 'app.resetLevel()')
-      .button('Select Level', "app.overlay.displayPage('select-level');");
+      .button('ΔΟΚΙΜΗ ΞΑΝΑ', 'app.resetLevel()')
+      .button('ΕΠΙΛΟΓΗ ΕΠΙΠΕΔΟΥ', "app.overlay.displayPage('select-level');");
   },
   
   'help-programming': function(p) {
     p.h1('Programming Help')
-      .p('To program your tank, you must enter a series of commands, one per line, in the "Program" box on the right of the screen.')
-      .p('You may choose from the following commands:')
+      .p('Για να προγραμματίσετε το τανκ σας, πρέπει να δώσετε μια σειρα εντολών, μια σε κάθε γραμμη, στο παράθυρο με το όνομα "ΠΡΟΓΡΑΜΜΑ".')
+      .p('Μπορείτε να χρησιμοποιήσετε τις παρακάτω εντολές:')
       .indent('<b>ΜΠΡΟΣΤΑ, ΜΠ ,move</b>: Το τανκ κινείται 1 τετράγωνο μπροστά. moves the tank forward one square')
       .indent('<b>ΔΕΞΙΑ ,ΔΕ ,right</b>: Δεξιά στροφή 90μοίρες / turn right 90 degrees')
       .indent('<b>ΑΡΙΣΤΕΡΑ , ΑΡ, left</b>: αριστερή στροφή 90μοίρες / turn left 90 degrees')
       .indent('<b>ΣΤΟΠ, ΠΕΡΙΜΕΝΕ, wait</b>: Περίμενε ένα γύρο / wait a turn')
       .indent('<b>ΠΥΡ,ΕΠΙΘΕΣΗ,ΜΠΑΜ, fire</b>: fire your gun - the bullet will travel until it hits something')
-      .p('Μπορείτε επίσης να γράψετε ΜΠΡΟΣΤΑ(5).Commands can be repeated multiple times by adding a count like so: <b>move(3)</b>')
-      .button('Close', "app.overlay.hide();");
+      .p('Μπορείτε επίσης να γράψετε ΜΠΡΟΣΤΑ(5).Αυτό είναι το ίδιο με το να γράψετε 5 φορές το ΜΠΡΟΣΤΑ')
+      .button('ΚΛΕΙΣΙΜΟ', "app.overlay.hide();");
   },
   
   'about': function(p) {
