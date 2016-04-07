@@ -102,7 +102,9 @@ replace_greek: function (str) {
 		source=source.replace(/ΜΠΟΥΜ/gi, "fire");
 		source=source.replace(/ΔΕ/gi,"right");
 		source=source.replace(/ΑΡ/gi, "left");
-		source=source.replace(/ΜΠ/gi, "move");		
+		source=source.replace(/ΜΠ/gi, "move");	
+		source=source.replace(/\s+\(/g, '(');//replace all spaces before '(' //20160407
+		source=source.replace(/\s+\[/g, '[');//replace all spaces before '[' //20160407 FOR REPEAT
 	
 		//try to implement repeat:
 		source=source.replace(/ΞΑΝΑ/gi, "repeat");	
@@ -110,7 +112,7 @@ replace_greek: function (str) {
 		source=source.replace(/ΕΠΑΝΕΛΑΒΕ/gi, "repeat");	
 		source=source.replace(/REPEAT/gi, "repeat"); //convert to lower case
 		source=source.replace(/repeat\s*/gi, "repeat"); //remove spaces after repeat
-		source=source.replace(/\s*\[/gi, "[");// replace "6  [" with "6["  -remove spaces
+		//source=source.replace(/\s*\[/gi, "[");// replace "6  [" with "6["  -remove spaces
 		
 		//search number between repeat 
 		//var repeats=source.match(/repeat.*?\[/); //get the command repeat6 [dothis //we just want the 6
