@@ -260,6 +260,91 @@ App.LEVELS = {
       ]
     }
     
-  ]
+  ],
+ 
+  repeat_lessons: [
+
+{
+key: 'repeat_lessonslevel-1'
+, name: 'REPEAT ZIG-ZAG!',
+map: ['|BR.....',
+'|.TR....',
+'+R.TR...',
+'..R.TR..',
+'...R.TR.',
+'....R.TR',
+'.....R.T',
+'......R^' ] },
+{
+key: 'repeat_lessonslevel-2'
+, name: 'REPEAT ZIG-ZAG 2!',
+map: ['|BR.....',
+'|TTR....',
+'+RTTR...',
+'..RTTR..',
+'...RTTR.',
+'....RTTR',
+'.....RTT',
+'......R^' ] },
+
+	{
+	key: 'repeat_lessonslevel-3'
+	, name: 'maze001 with a pause!',
+	map: [
+		'....R.R.',
+		'.+-*R.R.',
+		'....R.T.',
+		'.|..O.O.',
+		'.|..R.R.',
+		'.|..T.R.',
+		'.+--+.R.',
+		'...B|.R^' 
+	] 
+	},
+{
+key: 'repeat_lessonslevel-4'
+, name: 'the bunker!',
+map: ['........',
+'.+----+T',
+'.|....|T',
+'.|B..TTT',
+'.|....|.',
+'.|....+.',
+'.+------',
+'T......<' ] }	
+    
+  ],
+ 
+  custom: [
+
+ 	{
+	key: 'newlevel-0'
+	, name: 'maze001!',
+	map: [
+		'....R.R.',
+		'.+-*R.R.',
+		'....R.T.',
+		'.|..R.R.',
+		'.|..R.R.',
+		'.|..T.R.',
+		'.+--+.R.',
+		'...B|.R^' 
+	] 
+	},	
+	{
+	key: 'newlevel-1'
+	, name: 'maze001 with a pause!',
+	map: [
+		'....R.R.',
+		'.+-*R.R.',
+		'....R.T.',
+		'.|..O.O.',
+		'.|..R.R.',
+		'.|..T.R.',
+		'.+--+.R.',
+		'...B|.R^' 
+	] 
+	}	
+]
   
 }
