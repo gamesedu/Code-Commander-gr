@@ -85,8 +85,8 @@ Overlay.PAGES = {
       .p('Σε αυτό το παιχνίδι ελέγχετε ένα τανκ και πρέπει να καταστρέψετε την βάση του αντιπάλου.')
       .p('Για να το πετύχετε αυτό πρέπει να γράψετε ένα πρόγραμμα που να σας επιτρέψει να κερδίσετε την κάθε αποστολή.') //To do this, you must write a program to move and shoot your way through each level
       .p('Οι εντολές που μπορείτε να χρησιμοποιήσετε είναι οι παρακάτω (μια εντολή ανα σειρά):')
-      .indent('<b>ΜΠΡΟΣΤΑ,ΑΡΙΣΤΕΡΑ,ΔΕΞΙΑ,ΠΥΡ,ΣΤΟΠ/ΠΕΡΙΜΕΝΕ, ΕΠΑΝΑΛΑΒΕ</b>')
-      .p('ΠΧ. ΕΠΑΝΑΛΑΒΕ 5[ΜΠΡΟΣΤΑ(3)]' )
+      .indent('<b>ΜΠΡΟΣΤΑ,ΑΡΙΣΤΕΡΑ,ΔΕΞΙΑ,ΠΥΡ,ΣΤΟΠ/ΠΕΡΙΜΕΝΕ</b>')
+      .indent('<b>ΕΠΑΝΑΛΑΒΕ 5 [<BR>ΜΠΡΟΣΤΑ<BR>ΠΥΡ<BR>],</b>: ΘΑ ΕΚΤΕΛΕΣΕΙ ΤΙΣ ΕΝΤΟΛΕΣ ΜΠΡΟΣΤΑ ΚΑΙ ΠΥΡ 5 ΦΟΡΕΣ')
       .p('Μόλις γράψετε το πρόγραμμα πατήστε το κουμπί "Εκτέλεση" για να δείτε εαν δουλεύει σωστά.')//Once you have written your program, click the "Run Program" button to see if it works!
       .p('Υπάρχουν διάφορες αποστολές.Μπορείτε να επιλέξετε όποια αποστολή θέλετε πατώντας το κουμπί "Επιλογή επιπέδου".')
       .button('Επιλογή επιπέδου', "app.overlay.displayPage('select-level');");
@@ -127,8 +127,8 @@ Overlay.PAGES = {
   
   'lose': function(p) {
     p.h1('ΔΟΚΙΜΑΣΤΕ ΞΑΝΑ !')
-      .p('You did not destroy the base - keep working on your program and try again!')
-      .button('ΔΟΚΙΜΗ ΞΑΝΑ', 'app.resetLevel()')
+      .p('Δεν καταστράφηκε η βάση. Το πρόγραμμα σας χρειάζεται αλλαγές!')
+      .button('ΔΟΚΙΜΑΣΕ ΞΑΝΑ', 'app.resetLevel()')
       .button('ΕΠΙΛΟΓΗ ΕΠΙΠΕΔΟΥ', "app.overlay.displayPage('select-level');");
   },
   
@@ -141,6 +141,7 @@ Overlay.PAGES = {
       .indent('<b>ΑΡΙΣΤΕΡΑ , ΑΡ, left</b>: αριστερή στροφή 90μοίρες / turn left 90 degrees')
       .indent('<b>ΣΤΟΠ, ΠΕΡΙΜΕΝΕ, wait</b>: Περίμενε ένα γύρο / wait a turn')
       .indent('<b>ΠΥΡ,ΕΠΙΘΕΣΗ,ΜΠΑΜ, fire</b>: fire your gun - the bullet will travel until it hits something')
+      .indent('<b>ΕΠΑΝΑΛΑΒΕ 5 [<BR>ΜΠΡΟΣΤΑ<BR>ΠΥΡ<BR>],</b>: ΘΑ ΕΚΤΕΛΕΣΕΙ ΤΙΣ ΕΝΤΟΛΕΣ ΜΠΡΟΣΤΑ ΚΑΙ ΠΥΡ 5 ΦΟΡΕΣ')
       .p('Μπορείτε επίσης να γράψετε ΜΠΡΟΣΤΑ(5).Αυτό είναι το ίδιο με το να γράψετε 5 φορές το ΜΠΡΟΣΤΑ')
       .button('ΚΛΕΙΣΙΜΟ', "app.overlay.hide();");
   },
