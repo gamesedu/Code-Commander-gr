@@ -73,15 +73,15 @@ Overlay.PAGES = {
   'enter-name': function(p) {
     var saveCmd = "app.settings.set('name', $('#name').val());app.overlay.displayPage('welcome');";
     
-    p.h1('Welcome Commander')
-      .p('Enter your name to begin your tests:')
+    p.h1('Καλως Ηρθατε Κυβερνήτη')
+      .p('Γράψτε το όνομα σας για να ξεκινήσουμε το παιχνίδι:')
       .text('name')
-      .p('Click "Save" when you are done.')
+      .p('Πατήστε "Αποθήκευση" όταν είστε έτοιμος.')
       .button('Save', saveCmd);
   },
   
   'welcome': function(p) {
-    p.h1('Welcome ' + app.settings.get('name') + '!')
+    p.h1('Γειά σου ' + app.settings.get('name') + '!')
       .p('Σε αυτό το παιχνίδι ελέγχετε ένα τανκ και πρέπει να καταστρέψετε την βάση του αντιπάλου.')
       .p('Για να το πετύχετε αυτό πρέπει να γράψετε ένα πρόγραμμα που να σας επιτρέψει να κερδίσετε την κάθε αποστολή.') //To do this, you must write a program to move and shoot your way through each level
       .p('Οι εντολές που μπορείτε να χρησιμοποιήσετε είναι οι παρακάτω <b>(μια εντολή ανα σειρά)</b>:')
