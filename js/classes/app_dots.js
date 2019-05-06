@@ -117,6 +117,7 @@ Class.subclass('App', {
   },
 
   loadLevel: function(difficulty, num) {
+    document.getElementById("run-button").disabled = false; //jon 190506 re-enable run-button
     this.overlay.hide();
     if (this.level) {
       this.level.unload();
@@ -133,6 +134,8 @@ Class.subclass('App', {
   },
   
   runProgram: function() {
+    this.document.getElementById("run-button").disabled = true;  //jon 190506 disable run-button when pressed (it will be reenabled when level is reloaded)
+    this.overlay.hide();
     if (!this.level) { return; }
     //this.audio.play('program', {pan: 90});
     this.program.run();
