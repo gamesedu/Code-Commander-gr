@@ -204,7 +204,6 @@ replace_greek: function (str) {
   addBug: function(lineNum, msg) {
     this.ok = false;
     this.errors[lineNum] = msg;
-    document.getElementById("run-button").disabled = false; //jon 190519 re-enable run-button in case of error
   },
 
   validCommand: function(code) {
