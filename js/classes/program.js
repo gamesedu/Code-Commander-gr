@@ -205,6 +205,7 @@ replace_greek: function (str) {
     this.ok = false;
     this.errors[lineNum] = msg;
     document.getElementById("run-button").disabled = false; //jon 190519 re-enable run-button in case of error
+    document.getElementById("program").disabled = false; //jon 190522 re-enable program textarea in case of error
   },
 
   validCommand: function(code) {
