@@ -77,7 +77,7 @@ Overlay.PAGES = {
       .p('Γράψτε το όνομα σας για να ξεκινήσουμε το παιχνίδι:')
       .text('name')
       .p('Πατήστε "Αποθήκευση" όταν είστε έτοιμος.')
-      .button('Save', saveCmd);
+      .button('Αποθήκευση', saveCmd);
   },
   
   'welcome': function(p) {
